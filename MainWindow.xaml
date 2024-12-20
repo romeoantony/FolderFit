@@ -10,9 +10,8 @@
         MinHeight="400"
         MinWidth="700"
         Background="#252529"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
     <Grid >
-
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
@@ -21,120 +20,32 @@
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
 
-        <UserControls:MenuBar x:Name="menuBar"  Grid.Row="0"/>
+        <UserControls:MenuBar x:Name="menuBar" Grid.Row="0" FontSize="18"/>
 
         <DockPanel x:Name="folderPathPanel" Grid.Row="1" HorizontalAlignment="Stretch" Margin="10 0 10 0">
-
-            <Label Content="Folder:" Foreground="White"
-                   VerticalAlignment="Center" FontFamily="Dubai"/>
-
-
-            <UserControls:PathSelector x:Name="folderPathUC"
-                                           Height="40"
-                                           Placeholder="Enter Folder Path"
-                                           VerticalAlignment="Center"
-                                           HorizontalAlignment="Stretch" FontFamily="Dubai"
-                                           
-                                           />
-
+            <Label Content="Folder:" Foreground="White" VerticalAlignment="Center" FontFamily="Dubai" FontSize="18"/>
+            <UserControls:PathSelector x:Name="folderPathUC" Height="40" Placeholder="Enter Folder Path" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontFamily="Dubai" FontSize="18"/>
         </DockPanel>
 
-        <DockPanel x:Name="sortByPanel" Grid.Row="2"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Center"
-                   Margin="10 0 10 0"
-                    >
-
-            <Label x:Name="label"
-                   Foreground="White"
-			       Grid.Row="0"
-			       Content="Sort by:"
-			       HorizontalAlignment="Center"
-			       VerticalAlignment="Center" FontFamily="Dubai"/>
-
-            <RadioButton x:Name="sortByTypeRadioButton"
-					     Grid.Row="1"
-					     Content="Type"
-                         Foreground="White"
-                         Background="Transparent"
-					     VerticalContentAlignment="Center"
-					     HorizontalAlignment="Center"
-					     VerticalAlignment="Center"
-					     Checked="sortByTypeRadioButton_Checked" 
-                         FontFamily="Dubai"/>
-
-            <RadioButton x:Name="sortByDateRadioButton"
-					     Grid.Row="1" 
-                         Content="Date"
-                         Foreground="White"
-                         Background="Transparent"
-                         Margin="5 0 0 0"
-                         VerticalContentAlignment="Center"
-					     HorizontalAlignment="Center"
-					     VerticalAlignment="Center"
-					     Checked="sortByDateRadioButton_Checked" 
-                         FontFamily="Dubai"/>
-
-            <Button x:Name="btnStart"
-				    Content="Start"
-                    Foreground="Black"
-                    Background="#7ee07e"
-				    HorizontalAlignment="Center"
-				    VerticalAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Padding="0"
-                    Margin="10 0 10 0"
-				    Width="100"
-				    Height="28"
-				    Click="btnStart_Click" 
-                    FontFamily="Dubai"
-                    FontWeight="Bold"
-                    FontSize="16"/>
-            <CheckBox x:Name="openFolderCheckBox" Content="Open sorted folder?"
-                      Background="Transparent"
-                      Foreground="White"
-                      VerticalContentAlignment="Center"
-                      HorizontalAlignment="Right"
-                      IsChecked="True"
-                      Margin="0 0 10 0"
-                      />
+        <DockPanel x:Name="sortByPanel" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10 0 10 0">
+            <Label x:Name="label" Foreground="White" Grid.Row="0" Content="Sort by:" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Dubai" FontSize="18"/>
+            <RadioButton x:Name="sortByTypeRadioButton" Grid.Row="1" Content="Type" Foreground="White" Background="Transparent" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="sortByTypeRadioButton_Checked" FontFamily="Dubai" FontSize="18"/>
+            <RadioButton x:Name="sortByDateRadioButton" Grid.Row="1" Content="Date" Foreground="White" Background="Transparent" Margin="5 0 0 0" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="sortByDateRadioButton_Checked" FontFamily="Dubai" FontSize="18"/>
+            <Button x:Name="btnStart" Content="Start" Foreground="Black" Background="#7ee07e" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Padding="0" Margin="10 0 10 0" Width="100" Height="28" Click="btnStart_Click" FontFamily="Dubai" FontWeight="Bold" FontSize="18"/>
+            <CheckBox x:Name="openFolderCheckBox" Content="Open sorted folder?" Background="Transparent" Foreground="White" VerticalContentAlignment="Center" HorizontalAlignment="Right" IsChecked="True" Margin="0 0 10 0" FontSize="18"/>
         </DockPanel>
 
         <DockPanel x:Name="folderListPanel" Grid.Row="3">
             <Border BorderThickness="1" BorderBrush="Black" Margin="10 0 10 0" CornerRadius="5">
-                <ScrollViewer x:Name="scrollViewer" VerticalScrollBarVisibility="Auto" Foreground="White" Background="Transparent"> 
-                    <TextBlock x:Name="logViewer"
-                               Text="{Binding LogData}"
-                               Padding="5"
-                               Foreground="White">
-                    </TextBlock>
+                <ScrollViewer x:Name="scrollViewer" VerticalScrollBarVisibility="Auto" Foreground="White" Background="Transparent">
+                    <TextBlock x:Name="logViewer" Text="{Binding LogData}" Padding="5" Foreground="White" FontSize="18"/>
                 </ScrollViewer>
-                
             </Border>
-            
         </DockPanel>
 
         <DockPanel x:Name="progressPanel" Grid.Row="5">
-            <Label x:Name="statusLabel"
-                   Content="Progress"
-                   Background="Transparent"
-                   Foreground="White"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   Margin="10 0 0 0"
-                   Panel.ZIndex="1000" FontFamily="Dubai"/>
-
-            <ProgressBar x:Name="progressBar"
-                         Background="#2b4a4d"
-		                 HorizontalAlignment="Stretch"
-		                 VerticalAlignment="Center"
-		                 Height="30"
-		                 MinWidth="200"
-		                 Margin="10 0 10 0"/>
-            
+            <Label x:Name="statusLabel" Content="Progress" Background="Transparent" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10 0 0 0" Panel.ZIndex="1000" FontFamily="Dubai" FontSize="18"/>
+            <ProgressBar x:Name="progressBar" Background="#2b4a4d" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="30" MinWidth="200" Margin="10 0 10 0"/>
         </DockPanel>
-
-
-
     </Grid>
 </Window>
