@@ -20,7 +20,7 @@
             <Button x:Name="btnClear" Width="30" HorizontalAlignment="Right" Content="X" 
                     Background="Transparent" Foreground="LightGray" BorderThickness="0" Click="btnClear_Click" />
         </Grid>
-        <Button x:Name="btnBrowse" Grid.Column="1" HorizontalAlignment="Stretch" FontFamily="Dubai" Content="📂" Background="Transparent" Foreground="White" FontSize="20" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Click="btnBrowse_Click" />
+        <Button x:Name="btnBrowse" Grid.Column="1" HorizontalAlignment="Stretch" FontFamily="Dubai" Content="📂" Background="#ffce46" Foreground="#0d72bd" FontSize="20" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Click="btnBrowse_Click" />
     </Grid>
     
 </UserControl>

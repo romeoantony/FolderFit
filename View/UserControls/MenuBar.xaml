@@ -13,7 +13,7 @@
             <!--<RowDefinition Height="40"/>
             -->
         </Grid.RowDefinitions>
-        <Label x:Name="label" Content="FolderFit" Margin="5,0,0,0" VerticalAlignment="Center" FontSize="20" FontFamily="Broadway" Foreground="White"/>
+        <Label x:Name="label" Content="FolderFit" Margin="5,0,0,0" VerticalAlignment="Center" FontSize="20" FontFamily="Glasgow Heavy" Foreground="White"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
             <Button x:Name="btnMinimize" Content="_" Width="40" Height="40"
             BorderBrush="Transparent" Background="Transparent" 
