@@ -13,17 +13,17 @@
             <!--<RowDefinition Height="40"/>
             -->
         </Grid.RowDefinitions>
-        <Label x:Name="label" Content="FolderFit" Margin="5,0,0,0" VerticalAlignment="Center" FontSize="18" FontFamily="Broadway" Foreground="Black"/>
+        <Label x:Name="label" Content="FolderFit" Margin="5,0,0,0" VerticalAlignment="Center" FontSize="20" FontFamily="Broadway" Foreground="White"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
             <Button x:Name="btnMinimize" Content="_" Width="40" Height="40"
             BorderBrush="Transparent" Background="Transparent" 
-            Click="btnMinimize_Click"  Foreground="Black"/>
+            Click="btnMinimize_Click"  Foreground="White"/>
             <Button x:Name="btnMaximize" Content="🗖" Width="40" Height="40"
             BorderBrush="Transparent" Background="Transparent" 
-            Click="btnMaximize_Click"  Foreground="Black"/>
+            Click="btnMaximize_Click"  Foreground="White"/>
             <Button x:Name="btnClose" Content="X" Width="40" Height="40"
             BorderBrush="Transparent" Background="Transparent" 
-            Click="btnClose_Click"  Foreground="Black"/>
+            Click="btnClose_Click"  Foreground="White"/>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -9,7 +9,8 @@
         WindowStyle="None"
         MinHeight="400"
         MinWidth="700"
-        Title="MainWindow" Height="450" Width="800">
+        Background="#252529"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid >
 
         <Grid.RowDefinitions>
@@ -22,14 +23,14 @@
 
         <UserControls:MenuBar x:Name="menuBar"  Grid.Row="0"/>
 
-        <DockPanel x:Name="folderPathPanel" Grid.Row="1" HorizontalAlignment="Stretch" Margin="5 0 5 0">
+        <DockPanel x:Name="folderPathPanel" Grid.Row="1" HorizontalAlignment="Stretch" Margin="10 0 10 0">
 
-            <Label Content="Folder:"
+            <Label Content="Folder:" Foreground="White"
                    VerticalAlignment="Center" FontFamily="Dubai"/>
 
 
-            <UserControls:ClearableTextBox x:Name="folderPathUC"
-                                           Height="28"
+            <UserControls:PathSelector x:Name="folderPathUC"
+                                           Height="40"
                                            Placeholder="Enter Folder Path"
                                            VerticalAlignment="Center"
                                            HorizontalAlignment="Stretch" FontFamily="Dubai"
@@ -45,6 +46,7 @@
                     >
 
             <Label x:Name="label"
+                   Foreground="White"
 			       Grid.Row="0"
 			       Content="Sort by:"
 			       HorizontalAlignment="Center"
@@ -53,6 +55,8 @@
             <RadioButton x:Name="sortByTypeRadioButton"
 					     Grid.Row="1"
 					     Content="Type"
+                         Foreground="White"
+                         Background="Transparent"
 					     VerticalContentAlignment="Center"
 					     HorizontalAlignment="Center"
 					     VerticalAlignment="Center"
@@ -62,6 +66,8 @@
             <RadioButton x:Name="sortByDateRadioButton"
 					     Grid.Row="1" 
                          Content="Date"
+                         Foreground="White"
+                         Background="Transparent"
                          Margin="5 0 0 0"
                          VerticalContentAlignment="Center"
 					     HorizontalAlignment="Center"
@@ -70,15 +76,23 @@
                          FontFamily="Dubai"/>
 
             <Button x:Name="btnStart"
-				    Content="Start Organizing"
+				    Content="Start"
+                    Foreground="Black"
+                    Background="#7ee07e"
 				    HorizontalAlignment="Center"
 				    VerticalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Padding="0"
                     Margin="10 0 10 0"
 				    Width="100"
 				    Height="28"
 				    Click="btnStart_Click" 
-                    FontFamily="Dubai"/>
+                    FontFamily="Dubai"
+                    FontWeight="Bold"
+                    FontSize="16"/>
             <CheckBox x:Name="openFolderCheckBox" Content="Open sorted folder?"
+                      Background="Transparent"
+                      Foreground="White"
                       VerticalContentAlignment="Center"
                       HorizontalAlignment="Right"
                       IsChecked="True"
@@ -88,9 +102,11 @@
 
         <DockPanel x:Name="folderListPanel" Grid.Row="3">
             <Border BorderThickness="1" BorderBrush="Black" Margin="10 0 10 0" CornerRadius="5">
-                <ScrollViewer x:Name="scrollViewer" VerticalScrollBarVisibility="Auto">
+                <ScrollViewer x:Name="scrollViewer" VerticalScrollBarVisibility="Auto" Foreground="White" Background="Transparent"> 
                     <TextBlock x:Name="logViewer"
-                                Text="{Binding LogData}">
+                               Text="{Binding LogData}"
+                               Padding="5"
+                               Foreground="White">
                     </TextBlock>
                 </ScrollViewer>
                 
@@ -101,12 +117,15 @@
         <DockPanel x:Name="progressPanel" Grid.Row="5">
             <Label x:Name="statusLabel"
                    Content="Progress"
+                   Background="Transparent"
+                   Foreground="White"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    Margin="10 0 0 0"
                    Panel.ZIndex="1000" FontFamily="Dubai"/>
 
             <ProgressBar x:Name="progressBar"
+                         Background="#2b4a4d"
 		                 HorizontalAlignment="Stretch"
 		                 VerticalAlignment="Center"
 		                 Height="30"

@@ -7,9 +7,9 @@ using UserControl = System.Windows.Controls.UserControl;
 
 namespace FolderFit.View.UserControls
 {
-    public partial class ClearableTextBox : UserControl
+    public partial class PathSelector : UserControl
     {
-        public ClearableTextBox()
+        public PathSelector()
         {
             InitializeComponent();
         }
@@ -68,9 +68,13 @@ namespace FolderFit.View.UserControls
                         string folder = dialog.SelectedPath;
                         folderPath = folder;
                         txtInput.Text = folder;
+                        mainWindow.UpdateLog("Folder selected : " + folderPath);
+                    }
+                    else
+                    {
+                        mainWindow.UpdateLog("Folder selection canceled.");
                     }
                 }
-                mainWindow.UpdateLog("Folder selected : " + folderPath);
             }
             catch (Exception ex)
             {
