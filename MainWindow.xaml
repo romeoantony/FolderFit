@@ -60,6 +60,55 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <!--  Custom CheckBox style for dark backgrounds  -->
+        <Style TargetType="CheckBox">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="FontFamily" Value="Dubai" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <StackPanel Orientation="Horizontal">
+                            <Grid
+                                Width="18"
+                                Height="18"
+                                Margin="0,0,6,0"
+                                VerticalAlignment="Center">
+                                <Rectangle
+                                    x:Name="Box"
+                                    Width="16"
+                                    Height="16"
+                                    Fill="Transparent"
+                                    RadiusX="3"
+                                    RadiusY="3"
+                                    Stroke="White"
+                                    StrokeThickness="2" />
+                                <Path
+                                    x:Name="CheckMark"
+                                    Data="M 4 9 L 8 13 L 14 5"
+                                    Stroke="#FFD700"
+                                    StrokeEndLineCap="Round"
+                                    StrokeStartLineCap="Round"
+                                    StrokeThickness="3"
+                                    Visibility="Collapsed" />
+                            </Grid>
+                            <ContentPresenter VerticalAlignment="Center" RecognizesAccessKey="True" />
+                        </StackPanel>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Box" Property="Stroke" Value="Gray" />
+                                <Setter TargetName="CheckMark" Property="Stroke" Value="Gray" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
